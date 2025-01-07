@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Efe Kurucay</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Blog specific styles */
+        .blog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .blog-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .blog-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .tag-filter {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 20px;
+            background-color: var(--surface-light);
+            color: var(--text-primary-light);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .dark-mode .tag-filter {
+            background-color: var(--surface-dark);
+            color: var(--text-primary-dark);
+        }
+
+        .tag-filter.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-card {
+            background-color: var(--surface-light);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .dark-mode .blog-card {
+            background-color: var(--surface-dark);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary-light);
+        }
+
+        .dark-mode .blog-title {
+            color: var(--text-primary-dark);
+        }
+
+        .blog-excerpt {
+            color: var(--text-secondary-light);
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .dark-mode .blog-excerpt {
+            color: var(--text-secondary-dark);
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.875rem;
+            color: var(--text-secondary-light);
+        }
+
+        .dark-mode .blog-meta {
+            color: var(--text-secondary-dark);
+        }
+
+        .blog-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .blog-tag {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .blog-pagination {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .page-button {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            background-color: var(--surface-light);
+            color: var(--text-primary-light);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .dark-mode .page-button {
+            background-color: var(--surface-dark);
+            color: var(--text-primary-dark);
+        }
+
+        .page-button.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .blog-container {
+                padding: 1rem;
+            }
+
+            .blog-header h1 {
+                font-size: 2rem;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar container">
+            <a href="/" class="nav-logo">
+                <img src="../img/favicon/android-chrome-512x512.png" alt="Logo" class="logo">
+            </a>
+            <div class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="/" class="nav-link">Home</a></li>
+                    <li><a href="/#about" class="nav-link">About</a></li>
+                    <li><a href="/#projects" class="nav-link">Projects</a></li>
+                    <li><a href="/blog" class="nav-link active">Blog</a></li>
+                    <li><a href="/#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-buttons">
+                    <button id="themeToggle" class="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <a href="/resume.pdf" class="resume-btn" target="_blank">
+                        <i class="fas fa-download"></i>
+                        <span>Resume</span>
+                    </a>
+                </div>
+            </div>
+            <button class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main class="blog-container">
+        <div class="blog-header">
+            <h1>Blog Posts</h1>
+            <p>Thoughts, tutorials, and insights about technology and development</p>
+        </div>
+
+        <div class="blog-filters" id="tagFilters">
+            <button class="tag-filter active" data-tag="all">All</button>
+            <!-- Tags will be loaded dynamically -->
+        </div>
+
+        <div class="blog-grid" id="blogGrid">
+            <!-- Blog posts will be loaded dynamically -->
+        </div>
+
+        <div class="blog-pagination" id="pagination">
+            <!-- Pagination will be loaded dynamically -->
+        </div>
+    </main>
+
+    <script src="../js/main.js"></script>
+    <script src="blog.js"></script>
+</body>
+</html>

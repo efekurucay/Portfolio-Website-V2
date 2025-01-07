@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Efe Kurucay</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Projects specific styles */
+        .projects-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .projects-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .projects-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .projects-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .tag-filter {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 20px;
+            background-color: var(--surface-light);
+            color: var(--text-primary-light);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .dark-mode .tag-filter {
+            background-color: var(--surface-dark);
+            color: var(--text-primary-dark);
+        }
+
+        .tag-filter.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: var(--surface-light);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .dark-mode .project-card {
+            background-color: var(--surface-dark);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary-light);
+        }
+
+        .dark-mode .project-title {
+            color: var(--text-primary-dark);
+        }
+
+        .project-description {
+            color: var(--text-secondary-light);
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .dark-mode .project-description {
+            color: var(--text-secondary-dark);
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-tag {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            background-color: var(--surface-variant-light);
+            color: var(--text-primary-light);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .dark-mode .project-link {
+            background-color: var(--surface-variant-dark);
+            color: var(--text-primary-dark);
+        }
+
+        .project-link:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .projects-container {
+                padding: 1rem;
+            }
+
+            .projects-header h1 {
+                font-size: 2rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar container">
+            <a href="/" class="nav-logo">
+                <img src="../img/favicon/android-chrome-512x512.png" alt="Logo" class="logo">
+            </a>
+            <div class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="/" class="nav-link">Home</a></li>
+                    <li><a href="/#about" class="nav-link">About</a></li>
+                    <li><a href="/#projects" class="nav-link active">Projects</a></li>
+                    <li><a href="/blog" class="nav-link">Blog</a></li>
+                    <li><a href="/#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-buttons">
+                    <button id="themeToggle" class="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <a href="/resume.pdf" class="resume-btn" target="_blank">
+                        <i class="fas fa-download"></i>
+                        <span>Resume</span>
+                    </a>
+                </div>
+            </div>
+            <button class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main class="projects-container">
+        <div class="projects-header">
+            <h1>My Projects</h1>
+            <p>A showcase of my work and contributions to various projects</p>
+        </div>
+
+        <div class="projects-filters" id="tagFilters">
+            <button class="tag-filter active" data-tag="all">All</button>
+            <!-- Tags will be loaded dynamically -->
+        </div>
+
+        <div class="projects-grid" id="projectsGrid">
+            <!-- Projects will be loaded dynamically -->
+        </div>
+    </main>
+
+    <script src="../js/main.js"></script>
+    <script src="projects.js"></script>
+</body>
+</html>

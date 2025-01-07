@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Efe Kurucay</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="admin-wrapper">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <img src="../assets/images/profile.jpg" alt="Profile" class="logo header-profile-image">
+                <h1>Admin Panel</h1>
+            </div>
+            
+            <ul class="nav-links">
+                <li class="nav-link active" data-section="dashboard">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </li>
+                <li class="nav-link" data-section="profile">
+                    <i class="fas fa-user-circle"></i>
+                    <span>Profile</span>
+                </li>
+                <li class="nav-link" data-section="about">
+                    <i class="fas fa-info-circle"></i>
+                    <span>About Me</span>
+                </li>
+                <li class="nav-link" data-section="education">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Education</span>
+                </li>
+                <li class="nav-link" data-section="experience">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Experience</span>
+                </li>
+                <li class="nav-link" data-section="skills">
+                    <i class="fas fa-code"></i>
+                    <span>Skills</span>
+                </li>
+                <li class="nav-link" data-section="projects">
+                    <i class="fas fa-project-diagram"></i>
+                    <span>Projects</span>
+                </li>
+                <li class="nav-link" data-section="blog">
+                    <i class="fas fa-blog"></i>
+                    <span>Blog</span>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+                <div class="user-menu">
+                    <button class="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <div class="user-info">
+                        <img src="../assets/images/profile.jpg" alt="Profile" class="user-avatar header-profile-image">
+                        <span>Efe Kurucay</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content Area -->
+            <div class="content-area">
+                <!-- Dashboard Section -->
+                <section id="dashboard" class="content-section active">
+                    <h2>Dashboard</h2>
+                    <div class="dashboard-stats">
+                        <div class="stat-card">
+                            <i class="fas fa-project-diagram"></i>
+                            <div class="stat-info">
+                                <h3>Projects</h3>
+                                <p>12</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-blog"></i>
+                            <div class="stat-info">
+                                <h3>Blog Posts</h3>
+                                <p>8</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-code"></i>
+                            <div class="stat-info">
+                                <h3>Skills</h3>
+                                <p>15</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Other sections will be dynamically loaded -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Notification Container -->
+    <div id="notification" class="notification"></div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

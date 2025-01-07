@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post Title | Yahya Efe Kuruçay - Software Engineer</title>
+    <meta name="description" content="Blog post excerpt goes here">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../../img/favicon.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+</head>
+<body class="light-mode">
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar container">
+            <a href="../../" class="nav-logo">
+                <img src="../../img/logo.png" alt="Efe Kurucay" class="logo">
+            </a>
+            
+            <div class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="../../#home" class="nav-link">Home</a></li>
+                    <li><a href="../../#about" class="nav-link">About</a></li>
+                    <li><a href="../../#experience-education" class="nav-link">Experience</a></li>
+                    <li><a href="../../#skills" class="nav-link">Skills</a></li>
+                    <li><a href="../../#projects" class="nav-link">Projects</a></li>
+                    <li><a href="../../#blog" class="nav-link active">Blog</a></li>
+                    <li><a href="../../#contact" class="nav-link">Contact</a></li>
+                </ul>
+                
+                <div class="nav-buttons">
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <a href="../../cv.pdf" class="resume-btn" download>
+                        <i class="fas fa-download"></i>
+                        <span>Resume</span>
+                    </a>
+                </div>
+            </div>
+
+            <button class="nav-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Blog Post -->
+        <article class="blog-post">
+            <div class="container">
+                <!-- Post Header -->
+                <header class="post-header">
+                    <div class="post-meta" data-aos="fade-up">
+                        <span class="category">Category</span>
+                        <span class="date">
+                            <i class="far fa-calendar"></i>
+                            January 1, 2024
+                        </span>
+                        <span class="read-time">
+                            <i class="far fa-clock"></i>
+                            5 min read
+                        </span>
+                    </div>
+                    <h1 class="post-title" data-aos="fade-up">
+                        Blog Post Title Goes Here
+                    </h1>
+                    <div class="post-tags" data-aos="fade-up">
+                        <span class="tag">Tag 1</span>
+                        <span class="tag">Tag 2</span>
+                        <span class="tag">Tag 3</span>
+                    </div>
+                </header>
+
+                <!-- Post Content -->
+                <div class="post-content">
+                    <!-- Featured Image -->
+                    <figure class="post-image" data-aos="fade-up">
+                        <img src="post-image.jpg" alt="Blog Post Title">
+                        <figcaption>Image caption goes here</figcaption>
+                    </figure>
+
+                    <!-- Introduction -->
+                    <div class="post-section" data-aos="fade-up">
+                        <p class="lead">
+                            Introduction paragraph goes here. This should be a compelling opening
+                            that draws the reader in and sets up the main topic of the post.
+                        </p>
+                    </div>
+
+                    <!-- Main Content Sections -->
+                    <div class="post-section" data-aos="fade-up">
+                        <h2>Section Title</h2>
+                        <p>
+                            Regular paragraph text goes here. You can include various elements like:
+                        </p>
+                        <ul>
+                            <li>Bullet points</li>
+                            <li>Lists</li>
+                            <li>And other elements</li>
+                        </ul>
+                    </div>
+
+                    <!-- Code Example -->
+                    <div class="post-section" data-aos="fade-up">
+                        <h2>Code Example</h2>
+                        <p>Here's an example of how to include code snippets:</p>
+                        <pre><code class="language-javascript">
+// Example code
+function example() {
+    console.log('Hello, World!');
+}
+                        </code></pre>
+                    </div>
+
+                    <!-- Conclusion -->
+                    <div class="post-section" data-aos="fade-up">
+                        <h2>Conclusion</h2>
+                        <p>
+                            Wrap up the main points and provide any final thoughts or call to action.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Author Bio -->
+                <div class="author-bio" data-aos="fade-up">
+                    <img src="../../img/profile.jpg" alt="Efe Kurucay" class="author-image">
+                    <div class="author-info">
+                        <h3>Written by Efe Kuruçay</h3>
+                        <p>
+                            Software Engineer passionate about creating innovative solutions
+                            and sharing knowledge with the developer community.
+                        </p>
+                        <div class="author-social">
+                            <a href="https://github.com/efekurucay" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/efekurucay" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://twitter.com/efekurucaycom" target="_blank">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Share Buttons -->
+                <div class="share-buttons" data-aos="fade-up">
+                    <h3>Share this post</h3>
+                    <div class="share-links">
+                        <a href="#" class="share-link twitter" onclick="shareOnTwitter()">
+                            <i class="fab fa-twitter"></i>
+                            Twitter
+                        </a>
+                        <a href="#" class="share-link linkedin" onclick="shareOnLinkedIn()">
+                            <i class="fab fa-linkedin"></i>
+                            LinkedIn
+                        </a>
+                        <a href="#" class="share-link facebook" onclick="shareOnFacebook()">
+                            <i class="fab fa-facebook"></i>
+                            Facebook
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Related Posts -->
+                <div class="related-posts" data-aos="fade-up">
+                    <h3>Related Posts</h3>
+                    <div class="posts-grid">
+                        <!-- Related posts will be loaded dynamically -->
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="../../img/logo.png" alt="Efe Kurucay" class="footer-logo">
+                    <p>Creating innovative solutions with modern technology.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="../../#home">Home</a></li>
+                            <li><a href="../../#about">About</a></li>
+                            <li><a href="../../#projects">Projects</a></li>
+                            <li><a href="../../#blog">Blog</a></li>
+                            <li><a href="../../#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Connect</h3>
+                        <ul>
+                            <li><a href="https://github.com/efekurucay">GitHub</a></li>
+                            <li><a href="https://linkedin.com/in/efekurucay">LinkedIn</a></li>
+                            <li><a href="https://twitter.com/efekurucaycom">Twitter</a></li>
+                            <li><a href="https://instagram.com/efekurucaycom">Instagram</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Efe Kuruçay. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+    <script src="../../js/main.js"></script>
+    <script src="../../js/content-loader.js"></script>
+    <script src="post.js"></script>
+</body>
+</html>
